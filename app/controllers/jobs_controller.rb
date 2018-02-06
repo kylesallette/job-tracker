@@ -5,7 +5,6 @@ class JobsController < ApplicationController
   end
 
   def new
-    @company = Company.find(params[:company_id])
     @job = Job.new()
   end
 
@@ -25,20 +24,29 @@ class JobsController < ApplicationController
   end
 
   def edit
-    # implement on your own!
+    @job = Job.find(params[:id])
+    @company = Company.find(params[:company_id])
   end
 
   def update
-    # implement on your own!
+    @company = Company.find(params[:company_id])
+    @job = Job.find(params[:id])
+    @job.update(job_params)
+    redirect_to company_job_path(@company, @job)
+
   end
 
   def destroy
-    # implement on your own!
+    @job = Job.find(params[:id])
+    @job.destroy
+    redirect_to company_jobs_path
   end
 
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :level_of_interest, :city)
+    params.require(:job).permit(:title, :description, :level_of_interest, :city, :id)
   end
+
+
 end
