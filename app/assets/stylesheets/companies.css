@@ -1,0 +1,102 @@
+body {
+  background-color: #aac7f7;
+  text-align: center;
+}
+
+.container {
+  background-color: #f1f1f1;
+}
+
+.company-index-header-container{
+  width: 100px;
+ flex-wrap: nowrap;
+}
+
+.companies-container{
+  color: #fff;
+  background-color: #5995DA;  /* Blue */
+  padding: 20px 0;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.companies-container div{
+  justify-content: flex-start;
+  display: flex;
+  background-color: red;
+  justify-content: center;
+}
+
+li:hover a {
+  text-decoration: none;
+color: rgba(255, 255, 255, 0.8);
+background: rgb(145, 92, 182);
+padding: 15px 40px;
+border-radius: 4px;
+font-weight: normal;
+text-transform: uppercase;
+transition: all 0.2s ease-in-out;
+}
+
+a {
+  color: white;
+}
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -moz-box;
+   -moz-box-orient: horizontal;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.company-box{
+
+  background: #526f9e;
+  padding: 20px;
+  width: auto;
+  height: 50px;
+  margin: 5px;
+  line-height: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+
+}
+
+.inside {
+  background-color: #2a455e;
+
+  margin: 0 auto;
+}
+
+.edit-company{
+  height: 400px;
+ width: 400px;
+ position: relative;
+}
+
+.company-edit-pic{
+  position: absolute;
+ left: 0;
+ top: 0;
+}
+
+.company-text {
+  z-index: 100;
+position: absolute;
+
+font-size: 24px;
+font-weight: bold;
+left: 150px;
+top: 350px;
+}
+
+form {
+  display: inline-block;
+}

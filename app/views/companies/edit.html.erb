@@ -1,3 +1,16 @@
-<h2>Edit <%= @company.name %> here!</h2>
+<html>
+  <head>
+  </head>
+  <header>
+      <img src="https://i.imgur.com/meMPQCP.jpg"  style="border: #000000 6px groove"; alt="banner" height="300px" width="100%">
+  </header>
+  <body>
+   <div class=class="flex-container flex-start" >
+    <h2 class="company-box">Edit <%= @company.name %> here!</h2>
+   <div class="company-edit-box">
+    <%= render partial: "form" %>
+  </div>
+  </div>
 
-<%= render partial: "form" %>
+  </body>
+</html>
