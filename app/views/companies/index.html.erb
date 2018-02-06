@@ -1,15 +1,20 @@
-<% content_for :header do -%>
-  <%= stylesheet_link_tag 'companies' %>
-<% end -%>
-
-<h3>All Companies</h3>
-
-<ul>
+<html>
+<head>
+</head>
+<header>
+  <img src="https://i.imgur.com/LShJSde.jpg" alt="banner" height="300px" width="100%">
+</header>
+<body>
   <% @companies.each do |company| %>
-  <li class=company_<%= company.id %>>
-    <%= link_to company.name, company_path(company) %>:
-    <%= link_to "Edit", edit_company_path(company) %>
-    <%= link_to "Delete", company_path(company), method: "delete" %>
-  </li>
-  <% end %>
-</ul>
+  <ul class="flex-container flex-start">
+    <li class="company-box" style="font-family:Garamond; font-size:20px; font-color:white" <%= company.id %>>
+      <div class="inside">
+        <%= link_to company.name, company_path(company) %>:
+        <%= link_to "Edit", edit_company_path(company) %>
+        <%= link_to "Delete", company_path(company), method: "delete" %>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+  </body>
+  </html>
