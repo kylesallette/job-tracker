@@ -4,7 +4,7 @@
  href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
 </head>
 <header>
-  <img class="animated bounceInDown"src="https://i.imgur.com/LShJSde.jpg" alt="banner" height="300px" width="100%">
+  <img class="animated bounceInDown"src="https://i.imgur.com/9itVh9o.jpg" alt="banner" height="300px" width="100%">
 </header>
 <section>
 <div class="nav">
@@ -23,13 +23,14 @@
   </div>
 </section>
 <body>
-  <% @companies.each do |company| %>
+<% @categories.each do |category| %>
   <ul class="flex-container flex-start">
-    <li class="company-box" style="font-family:Garamond; font-size:20px; font-color:white" <%= company.id %>>
+    <li class="company-box" style="font-family:Garamond; font-size:20px; font-color:white" <%= category.id %>>
       <div class="inside">
-        <%= link_to company.name, company_path(company) %>:
-        <%= link_to "Edit", edit_company_path(company) %>
-        <%= link_to "Delete", company_path(company), method: "delete" %>
+          <%= link_to category.title, category_path(category) %>:
+        <%= link_to "Delete", category, method: "delete" %>
+          <%= link_to "Edit", edit_category_path(category)%>
+          <%= link_to "View",  category_path(category)%>
       </div>
     </li>
     <% end %>
