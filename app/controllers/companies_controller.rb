@@ -1,6 +1,7 @@
 class CompaniesController < ApplicationController
   def index
     @companies = Company.all
+    @categories = Category.all
   end
 
   def new
