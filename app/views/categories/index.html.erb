@@ -1,8 +1,39 @@
-All Categories
-
+<html>
+<head>
+  <link rel="stylesheet"
+ href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+</head>
+<header>
+  <img class="animated bounceInDown"src="https://i.imgur.com/9itVh9o.jpg" alt="banner" height="300px" width="100%">
+</header>
+<section>
+<div class="nav">
+    <div class="navbar">
+      <a href="/">Home</a>
+      <div class="dropdown">
+        <button class="dropbtn">Categories
+          <i class="la la bub"></i>
+        </button>
+        <div class="dropdown-content" id="merchant-dropdown">
+      <%= link_to "Create a new category",  new_category_path(@category) %>
+        <%= link_to "View all Categories",  categories_path(@categories) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<body>
 <% @categories.each do |category| %>
-  <ul><%= category.title %></ul>
-    <%= link_to "Delete", category, method: "delete" %>
-      <%= link_to "Edit", edit_category_path(category)%>
-      <%= link_to "View",  category_path(category)%>
-<% end %>
+  <ul class="flex-container flex-start">
+    <li class="company-box" style="font-family:Garamond; font-size:20px; font-color:white" <%= category.id %>>
+      <div class="inside">
+          <%= link_to category.title, category_path(category) %>:
+        <%= link_to "Delete", category, method: "delete" %>
+          <%= link_to "Edit", edit_category_path(category)%>
+          <%= link_to "View",  category_path(category)%>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+  </body>
+  </html>
