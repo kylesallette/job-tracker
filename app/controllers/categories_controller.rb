@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @job = Job.where(category_id: @category.id)
+   @job = Job.where(category_id: @category.id)
   end
 
   def destroy
@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
-      flash[:success] = "#{@category.name} added to datebase!"
+      flash[:success] = "#{@category.title} added to Categories!"
     redirect_to category_path(@category)
    else
     redirect_to categories_path
@@ -37,14 +37,20 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @category.update(category_params)
     if @category.save
-      flash[:success] = "#{@category.name} updated!"
+      flash[:success] = "Category #{@category.title} updated!"
       redirect_to category_path(@category)
     else
       render :edit
     end
   end
 
-  private category_params
-    params.require(:category).permit(:name)
+  private
+
+  def category_params
+   params.require(:category).permit(:title)
   end
+
+
+
+
 end
