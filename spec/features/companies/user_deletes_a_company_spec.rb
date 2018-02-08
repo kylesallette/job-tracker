@@ -6,6 +6,7 @@ describe "User deletes existing company" do
     visit companies_path
 
     within(".company_#{company.id}") do
+      page.find('#ESPN').trigger(:mouseover)
       click_link "Delete"
     end
 
