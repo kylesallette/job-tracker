@@ -1,3 +1,64 @@
+
+
+
+
+
+
+
+<html>
+<head>
+  <link rel="stylesheet"
+ href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+</head>
+<header>
+  <img class="animated "src="https://i.imgur.com/Pn82tpy.jpg" alt="banner" height="300px" width="100%">
+</header>
+<section>
+<div class="nav">
+    <div class="navbar">
+      <a href="/">Home</a>
+      <div class="dropdown">
+        <button class="dropbtn">Categories
+          <i class="la la bub"></i>
+        </button>
+        <div class="dropdown-content" id="merchant-dropdown">
+      <%= link_to "Create a new category",  new_category_path(@category) %>
+        <%= link_to "View all Categories",  categories_path(@categories) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<body>
+  <div class="container-job-description">
+
+    <h2>Create a new job at <%= @company.name %> here!</h2>
+
+    <%= render partial: "form" %>
+</div>
+
+
+  </body>
+  </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h2>Create a new job at <%= @company.name %> here!</h2>
 
 <%= render partial: "form" %>

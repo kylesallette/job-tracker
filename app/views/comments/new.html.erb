@@ -3,13 +3,15 @@
 
 
 
+
+
 <html>
 <head>
   <link rel="stylesheet"
  href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
 </head>
 <header>
-  <img class="animated "src="https://i.imgur.com/vSn5js1.jpg" alt="banner" height="300px" width="100%">
+  <img class="animated "src="https://i.imgur.com/qkQzR2Q.jpg" alt="banner" height="300px" width="100%">
 </header>
 <section>
 <div class="nav">
@@ -29,12 +31,13 @@
 </section>
 <body>
   <div class="container-job-description">
-  <%= form_for @category do |f| %>
-      <%= f.label :title %>
-      <%= f.text_field :title %>
+    <%= form_for  |f| %>
+         <%= f.label :comment %>
+         <%= f.text_field :content, :class => "form-control" %>
 
-      <%= f.submit %>
-    <% end %>
+         <%= f.submit 'Create Comment', :class => 'btn btn-sm btn-pill btn-success',style: 'float:right; margin-top: 10px;' %>
+       <% end %>
+
 </div>
 
 

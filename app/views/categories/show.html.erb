@@ -1,4 +1,38 @@
-<strong> <%= @category.title %> </strong>
-  <% @category.jobs.each do |job| %>
-    <ul> <%= job.title  %>  at <%= job.company.name %></ul>
-  <% end %>
+<html>
+<head>
+  <link rel="stylesheet"
+ href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+</head>
+<header>
+  <img class="animated bounceInDown"src="https://i.imgur.com/9itVh9o.jpg" alt="banner" height="300px" width="100%">
+</header>
+<section>
+<div class="nav">
+    <div class="navbar">
+      <a href="/">Home</a>
+      <div class="dropdown">
+        <button class="dropbtn">Categories
+          <i class="la la bub"></i>
+        </button>
+        <div class="dropdown-content" id="merchant-dropdown">
+      <%= link_to "Create a new category",  new_category_path(@category) %>
+        <%= link_to "View all Categories",  categories_path(@categories) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<body>
+    <strong> <%= @category.title %> </strong>
+  <ul class="flex-container flex-start">
+    <% @category.jobs.each do |job| %>
+    <li class="company-box" style="font-family:Garamond; font-size:20px; font-color:white" <%= @category  %>>
+      <div class="inside">
+        <ul> <%= job.title  %>  at <%= job.company.name %></ul>
+      <% end %>
+      </div>
+    </li>
+
+  </ul>
+  </body>
+  </html>
